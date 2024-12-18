@@ -1,4 +1,4 @@
-export const PASSIVES_DATA = [
+[
     {
         name: "Beef",
         href: "https://poe2db.tw/us/Beef",
@@ -3617,30 +3617,4 @@ export const PASSIVES_DATA = [
         desc: "+1Charm SlotCommunity Wiki",
         emotions: ["Paranoia", "Paranoia", "Paranoia"]
     }
-];
-
-export const EMOTIONS = [
-    "Ire",
-    "Guilt",
-    "Greed",
-    "Paranoia",
-    "Envy",
-    "Disgust",
-    "Despair",
-    "Fear",
-    "Suffering",
-    "Isolation"
-];
-
-export const DEFAULT_PRICES = {
-    Ire: "1/16",
-    Guilt: "1/4.5", 
-    Greed: "1/2.1",
-    Paranoia: "1/1.33",
-    Envy: "3",
-    Disgust: "8.5",
-    Despair: "17",
-    Fear: "45",
-    Suffering: "110",
-    Isolation: "322"
-}; 
+]

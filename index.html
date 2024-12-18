@@ -23,16 +23,6 @@
 
         const { useState, useEffect, Fragment } = React;
 
-        const formatDesc = (desc) => {
-            const lines = desc.split(/(?:^|\s)(?=\d+%)/);
-            return lines.map((line, i) => (
-                <Fragment key={i}>
-                    {line.trim()}
-                    {i < lines.length - 1 && <br />}
-                </Fragment>
-            ));
-        };
-
         function PassivesCalculator() {
             const [prices, setPrices] = useState(DEFAULT_PRICES);
             const [sortField, setSortField] = useState('name');
@@ -175,7 +165,7 @@
                                                     </a>
                                                 ) : passive.name}
                                             </td>
-                                            <td className="p-2 border">{formatDesc(passive.desc)}</td>
+                                            <td className="p-2 border whitespace-pre-line">{passive.desc}</td>
                                             <td className="p-2 border">{passive.emotions.join(', ')}</td>
                                             <td className="p-2 border">
                                                 {Number.isInteger(calculateCost(passive.emotions)) 
