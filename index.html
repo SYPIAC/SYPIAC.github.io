@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoE2 Passive Calculator</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, Fragment } = React;
+
+        const EMOTIONS = [
+            'Ire', 'Guilt', 'Greed', 'Paranoia', 'Envy', 'Disgust',
+            'Despair', 'Fear', 'Suffering', 'Isolation'
+        ];
+
+        const DEFAULT_PRICES = {
+            'Ire': '1/16',
+            'Guilt': '1/4.5',
+            'Greed': '1/2.1',
+            'Paranoia': '1/1.33',
+            'Envy': '3',
+            'Disgust': '8.5',
+            'Despair': '17',
+            'Fear': '44',
+            'Suffering': '110',
+            'Isolation': '322'
+        };
+
+        const formatDesc = (desc) => {
+            const lines = desc.split(/(?:^|\s)(?=\d+%)/);
+            return lines.map((line, i) => (
+                <Fragment key={i}>
+                    {line.trim()}
+                    {i < lines.length - 1 && <br />}
+                </Fragment>
+            ));
+        };
+
+        const PASSIVES_DATA = [
+            {
+                name: "Overwhelm",
+                desc: "5% reduced Attack Speed\n20% increased Stun Buildup\n40% increased Damage with Two Handed Weapons",
+                emotions: ["Despair", "Fear", "Envy"]
+            },
+            {
+                name: "Cross Strike",
+                desc: "20% increased Accuracy Rating while Dual Wielding\n3% increased Movement Speed while Dual Wielding",
+                emotions: ["Guilt", "Greed", "Envy"]
+            },
+            {
+                name: "Blade Flurry",
+                desc: "6% increased Attack Speed while Dual Wielding\n15% increased Attack Critical Hit Chance while Dual Wielding",
+                emotions: ["Envy", "Envy", "Despair"]
+            },
+            {
+                name: "Polished Iron",
+                desc: "25% increased Armour\n50% of Base Armour from Equipment also added to Stun Threshold",
+                emotions: ["Paranoia", "Guilt", "Despair"]
+            },
+            // ... many more passives ...
+        ];
+
+        function PassivesCalculator() {
+            const [prices, setPrices] = useState(DEFAULT_PRICES);
+            const [sortField, setSortField] = useState('name');
+            const [sortDirection, setSortDirection] = useState('asc');
+            const [sortedPassives, setSortedPassives] = useState([]);
+            const [searchTerm, setSearchTerm] = useState('');
+
+            const calculateCost = (emotions) => {
+                return emotions.reduce((total, emotion) => {
+                    const price = parseFraction(prices[emotion]);
+                    return total + (isNaN(price) ? 0 : price);
+                }, 0);
+            };
+
+            const parseFraction = (input) => {
+                if (!input) return NaN;
+                const parts = input.trim().split('/');
+                if (parts.length === 2) {
+                    const num = parseFloat(parts[0]);
+                    const den = parseFloat(parts[1]);
+                    if (!isNaN(num) && !isNaN(den) && den !== 0) {
+                        return num / den;
+                    }
+                }
+                return parseFloat(input);
+            };
+
+            useEffect(() => {
+                let filtered = PASSIVES_DATA.filter(passive =>
+                    passive.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    passive.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    passive.emotions.some(e => e.toLowerCase().includes(searchTerm.toLowerCase()))
+                );
+
+                filtered = filtered.sort((a, b) => {
+                    let aVal, bVal;
+                    if (sortField === 'cost') {
+                        aVal = calculateCost(a.emotions);
+                        bVal = calculateCost(b.emotions);
+                    } else {
+                        aVal = a[sortField];
+                        bVal = b[sortField];
+                    }
+
+                    if (sortDirection === 'asc') {
+                        return aVal > bVal ? 1 : -1;
+                    }
+                    return aVal < bVal ? 1 : -1;
+                });
+
+                setSortedPassives(filtered);
+            }, [prices, sortField, sortDirection, searchTerm]);
+
+            const handleSort = (field) => {
+                if (sortField === field) {
+                    setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+                } else {
+                    setSortField(field);
+                    setSortDirection('asc');
+                }
+            };
+
+            const resetToDefault = () => {
+                setPrices(DEFAULT_PRICES);
+            };
+
+            return (
+                <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg">
+                    <div className="p-6">
+                        <div className="flex justify-between items-center mb-6">
+                            <h1 className="text-2xl font-bold">PoE2 Passive Calculator</h1>
+                            <button 
+                                onClick={resetToDefault}
+                                className="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 rounded"
+                            >
+                                Reset Prices
+                            </button>
+                        </div>
+                        
+                        <div className="grid grid-cols-5 gap-4 mb-6">
+                            {EMOTIONS.map(emotion => (
+                                <div key={emotion}>
+                                    <label className="block text-sm font-medium mb-1">{emotion}</label>
+                                    <input
+                                        type="text"
+                                        pattern="[0-9./]*"
+                                        inputMode="text"
+                                        value={prices[emotion]}
+                                        onChange={(e) => setPrices(prev => ({ ...prev, [emotion]: e.target.value }))}
+                                        placeholder="e.g. 1/7"
+                                        className="w-full p-2 border rounded"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+
+                        <input
+                            type="text"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            placeholder="Search passives..."
+                            className="w-full p-2 border rounded mb-4"
+                        />
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full border-collapse">
+                                <thead>
+                                    <tr className="bg-gray-100">
+                                        <th className="p-2 border text-left cursor-pointer" onClick={() => handleSort('name')}>
+                                            Name {sortField === 'name' && (sortDirection === 'asc' ? '↑' : '↓')}
+                                        </th>
+                                        <th className="p-2 border text-left cursor-pointer" onClick={() => handleSort('desc')}>
+                                            Description {sortField === 'desc' && (sortDirection === 'asc' ? '↑' : '↓')}
+                                        </th>
+                                        <th className="p-2 border text-left">Emotions</th>
+                                        <th className="p-2 border text-left cursor-pointer" onClick={() => handleSort('cost')}>
+                                            Cost {sortField === 'cost' && (sortDirection === 'asc' ? '↑' : '↓')}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {sortedPassives.map((passive, index) => (
+                                        <tr key={index} className="border-b hover:bg-gray-50">
+                                            <td className="p-2 border">{passive.name}</td>
+                                            <td className="p-2 border">{formatDesc(passive.desc)}</td>
+                                            <td className="p-2 border">{passive.emotions.join(', ')}</td>
+                                            <td className="p-2 border">{calculateCost(passive.emotions).toFixed(4)}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<PassivesCalculator />);
+    </script>
+</body>
+</html>
