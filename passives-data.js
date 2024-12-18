@@ -314,7 +314,7 @@ export const PASSIVES_DATA = [
     {
         name: "Coated Arms",
         href: "https://poe2db.tw/us/Coated_Arms",
-        desc: "25% increased Damage with One Handed Weapons\n20% increased Chance to inflict Ailments with One-HandedAttacks",
+        desc: "25% increased Damage with One Handed Weapons\n20% increased Chance to inflict Ailments with One-Handed Attacks",
         emotions: ["Fear", "Greed", "Paranoia"]
     },
     {
@@ -380,7 +380,7 @@ export const PASSIVES_DATA = [
     {
         name: "Projectile Bulwark",
         href: "https://poe2db.tw/us/Projectile_Bulwark",
-        desc: "30% increased Armour\nDefend with 120% of Armour against ProjectileAttacks",
+        desc: "30% increased Armour\nDefend with 120% of Armour against Projectile Attacks",
         emotions: ["Ire", "Fear", "Despair"]
     },
     {
@@ -464,7 +464,7 @@ export const PASSIVES_DATA = [
     {
         name: "Afterimage",
         href: "https://poe2db.tw/us/Afterimage",
-        desc: "8% more chance to Evade MeleeAttacks",
+        desc: "8% more chance to Evade Melee Attacks",
         emotions: ["Guilt", "Greed", "Disgust"]
     },
     {
@@ -1424,7 +1424,7 @@ export const PASSIVES_DATA = [
     {
         name: "Deep Wounds",
         href: "https://poe2db.tw/us/Deep_Wounds",
-        desc: "AttackHitsAggravate any Bleeding on targets which is older than 4 seconds",
+        desc: "Attack Hits Aggravate any Bleeding on targets which is older than 4 seconds",
         emotions: ["Disgust", "Despair", "Paranoia"]
     },
     {
@@ -1436,13 +1436,13 @@ export const PASSIVES_DATA = [
     {
         name: "Perfectly Placed Knife",
         href: "https://poe2db.tw/us/Perfectly_Placed_Knife",
-        desc: "30% increased Critical Hit Chance against Bleeding Enemies\n20% chance to AggravateBleeding on targets you Critically Hit with Attacks",
+        desc: "30% increased Critical Hit Chance against Bleeding Enemies\n20% chance to Aggravate Bleeding on targets you Critically Hit with Attacks",
         emotions: ["Fear", "Paranoia", "Isolation"]
     },
     {
         name: "Aggravation",
         href: "https://poe2db.tw/us/Aggravation",
-        desc: "10% chance to AggravateBleeding on targets you Hit with Attacks",
+        desc: "10% chance to Aggravate Bleeding on targets you Hit with Attacks",
         emotions: ["Despair", "Suffering", "Envy"]
     },
     {
@@ -1646,13 +1646,13 @@ export const PASSIVES_DATA = [
     {
         name: "Internal Bleeding",
         href: "https://poe2db.tw/us/Internal_Bleeding",
-        desc: "20% chance to AggravateBleeding on targets you Hit with EmpoweredAttacks\nEmpowered Attacks deal 30% increased Damage",
+        desc: "20% chance to Aggravate Bleeding on targets you Hit with Empowered Attacks\nEmpowered Attacks deal 30% increased Damage",
         emotions: ["Guilt", "Despair", "Paranoia"]
     },
     {
         name: "Bravado",
         href: "https://poe2db.tw/us/Bravado",
-        desc: "EmpoweredAttacks have 50% increased Stun Buildup\n100% increased Stun Threshold during EmpoweredAttacks",
+        desc: "Empowered Attacks have 50% increased Stun Buildup\n100% increased Stun Threshold during EmpoweredAttacks",
         emotions: ["Suffering", "Guilt", "Despair"]
     },
     {
