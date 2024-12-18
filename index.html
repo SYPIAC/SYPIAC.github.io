@@ -103,7 +103,12 @@
                 <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-lg">
                     <div className="p-6">
                         <div className="flex justify-between items-center mb-6">
-                            <h1 className="text-2xl font-bold">PoE2 Instilling Calculator</h1>
+                            <div>
+                                <h1 className="text-2xl font-bold">PoE2 Instilling Calculator</h1>
+                                <p className="text-sm text-gray-600 mt-1">
+                                    All prices are manually entered and are in exalts. Default prices are from December 18, 2024.
+                                </p>
+                            </div>
                             <button 
                                 onClick={resetToDefault}
                                 className="px-4 py-2 text-sm bg-gray-200 hover:bg-gray-300 rounded"
@@ -149,7 +154,7 @@
                                         </th>
                                         <th className="p-2 border text-left">Emotions</th>
                                         <th className="p-2 border text-left cursor-pointer" onClick={() => handleSort('cost')}>
-                                            Cost {sortField === 'cost' && (sortDirection === 'asc' ? '↑' : '↓')}
+                                            Cost(ex) {sortField === 'cost' && (sortDirection === 'asc' ? '↑' : '↓')}
                                         </th>
                                     </tr>
                                 </thead>
@@ -165,7 +170,11 @@
                                             </td>
                                             <td className="p-2 border">{formatDesc(passive.desc)}</td>
                                             <td className="p-2 border">{passive.emotions.join(', ')}</td>
-                                            <td className="p-2 border">{calculateCost(passive.emotions).toFixed(4)}</td>
+                                            <td className="p-2 border">
+                                                {Number.isInteger(calculateCost(passive.emotions)) 
+                                                    ? calculateCost(passive.emotions) 
+                                                    : calculateCost(passive.emotions).toFixed(1)}
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>
