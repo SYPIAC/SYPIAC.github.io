@@ -452,16 +452,16 @@ export const PASSIVES_DATA = [
 ];
 
 export const EMOTIONS = [
-    "Despair",
-    "Fear",
-    "Envy",
+    "Ire",
     "Guilt",
     "Greed",
     "Paranoia",
-    "Isolation",
-    "Suffering",
+    "Envy",
     "Disgust",
-    "Ire"
+    "Despair",
+    "Fear",
+    "Suffering",
+    "Isolation"
 ];
 
 export const DEFAULT_PRICES = {
