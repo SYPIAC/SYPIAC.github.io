@@ -428,13 +428,13 @@ export const PASSIVES_DATA = [
     {
         name: "Escape Strategy",
         href: "https://poe2db.tw/us/Escape_Strategy",
-        desc: "100% increased Evasion Rating if you have been HitRecently\n30% reduced Evasion Rating if you haven't been HitRecently",
+        desc: "100% increased Evasion Rating if you have been Hit Recently\n30% reduced Evasion Rating if you haven't been Hit Recently",
         emotions: ["Despair", "Paranoia", "Despair"]
     },
     {
         name: "Careful Consideration",
         href: "https://poe2db.tw/us/Careful_Consideration",
-        desc: "30% reduced Evasion Rating if you have been HitRecently\n100% increased Evasion Rating if you haven't been HitRecently",
+        desc: "30% reduced Evasion Rating if you have been Hit Recently\n100% increased Evasion Rating if you haven't been Hit Recently",
         emotions: ["Paranoia", "Paranoia", "Greed"]
     },
     {
@@ -542,7 +542,7 @@ export const PASSIVES_DATA = [
     {
         name: "Backup Plan",
         href: "https://poe2db.tw/us/Backup_Plan",
-        desc: "40% increased Evasion Rating if you have been HitRecently\n40% increased Armour if you haven't been HitRecently",
+        desc: "40% increased Evasion Rating if you have been Hit Recently\n40% increased Armour if you haven't been HitRecently",
         emotions: ["Greed", "Greed", "Ire"]
     },
     {
@@ -572,7 +572,7 @@ export const PASSIVES_DATA = [
     {
         name: "Shadow Dancing",
         href: "https://poe2db.tw/us/Shadow_Dancing",
-        desc: "30% increased Evasion Rating if you have been HitRecently\n60% faster start of Energy Shield Recharge if you've been StunnedRecently",
+        desc: "30% increased Evasion Rating if you have been Hit Recently\n60% faster start of Energy Shield Recharge if you've been StunnedRecently",
         emotions: ["Despair", "Guilt", "Despair"]
     },
     {
@@ -584,7 +584,7 @@ export const PASSIVES_DATA = [
     {
         name: "Shimmering",
         href: "https://poe2db.tw/us/Shimmering",
-        desc: "20% increased Energy Shield Recovery Rate if you haven't been HitRecently\n3% increased Movement Speed while you have Energy Shield",
+        desc: "20% increased Energy Shield Recovery Rate if you haven't been Hit Recently\n3% increased Movement Speed while you have Energy Shield",
         emotions: ["Envy", "Envy", "Suffering"]
     },
     {
@@ -842,13 +842,13 @@ export const PASSIVES_DATA = [
     {
         name: "Briny Carapace",
         href: "https://poe2db.tw/us/Briny_Carapace",
-        desc: "60% increased Stun Threshold for each time you've been StunnedRecently",
+        desc: "60% increased Stun Threshold for each time you've been Stunned Recently",
         emotions: ["Guilt", "Ire", "Paranoia"]
     },
     {
         name: "Deft Recovery",
         href: "https://poe2db.tw/us/Deft_Recovery",
-        desc: "30% increased Stun Recovery\n30% increased Stun Threshold if you haven't been StunnedRecently",
+        desc: "30% increased Stun Recovery\n30% increased Stun Threshold if you haven't been Stunned Recently",
         emotions: ["Envy", "Ire", "Ire"]
     },
     {
@@ -1136,7 +1136,7 @@ export const PASSIVES_DATA = [
     {
         name: "Moment of Truth",
         href: "https://poe2db.tw/us/Moment_of_Truth",
-        desc: "25% increased Critical Damage Bonus if you've dealt a Non-Critical HitRecently\n20% increased Critical Hit Chance",
+        desc: "25% increased Critical Damage Bonus if you've dealt a Non-Critical Hit Recently\n20% increased Critical Hit Chance",
         emotions: ["Ire", "Suffering", "Disgust"]
     },
     {
@@ -1340,7 +1340,7 @@ export const PASSIVES_DATA = [
     {
         name: "Erraticism",
         href: "https://poe2db.tw/us/Erraticism",
-        desc: "16% increased Cast Speed if you've dealt a Critical HitRecently\n10% reduced Critical Hit Chance",
+        desc: "16% increased Cast Speed if you've dealt a Critical Hit Recently\n10% reduced Critical Hit Chance",
         emotions: ["Despair", "Greed", "Guilt"]
     },
     {
@@ -1586,7 +1586,7 @@ export const PASSIVES_DATA = [
     {
         name: "Savagery",
         href: "https://poe2db.tw/us/Savagery",
-        desc: "50% increased Evasion Rating if you've consumed a Frenzy ChargeRecently\n+1 to Maximum Frenzy Charges",
+        desc: "50% increased Evasion Rating if you've consumed a Frenzy Charge Recently\n+1 to Maximum Frenzy Charges",
         emotions: ["Suffering", "Fear", "Paranoia"]
     },
     {
@@ -1628,7 +1628,7 @@ export const PASSIVES_DATA = [
     {
         name: "The Power Within",
         href: "https://poe2db.tw/us/The_Power_Within",
-        desc: "20% increased Critical Damage Bonus if you've gained a Power ChargeRecently\n+1 to Maximum Power Charges",
+        desc: "20% increased Critical Damage Bonus if you've gained a Power Charge Recently\n+1 to Maximum Power Charges",
         emotions: ["Envy", "Paranoia", "Suffering"]
     },
     {
@@ -1658,7 +1658,7 @@ export const PASSIVES_DATA = [
     {
         name: "Deafening Cries",
         href: "https://poe2db.tw/us/Deafening_Cries",
-        desc: "25% increased Warcry Cooldown Recovery Rate\n8% increased Damage for each time you've WarcriedRecently",
+        desc: "25% increased Warcry Cooldown Recovery Rate\n8% increased Damage for each time you've Warcried Recently",
         emotions: ["Disgust", "Guilt", "Paranoia"]
     },
     {
@@ -1730,7 +1730,7 @@ export const PASSIVES_DATA = [
     {
         name: "Carved Earth",
         href: "https://poe2db.tw/us/Carved_Earth",
-        desc: "20% increased Totem Damage\n6% increased Attack and Cast Speed if you've summoned a TotemRecently",
+        desc: "20% increased Totem Damage\n6% increased Attack and Cast Speed if you've summoned a Totem Recently",
         emotions: ["Suffering", "Suffering", "Ire"]
     },
     {
@@ -1772,13 +1772,13 @@ export const PASSIVES_DATA = [
     {
         name: "Ancestral Alacrity",
         href: "https://poe2db.tw/us/Ancestral_Alacrity",
-        desc: "30% increased Totem Placement speed\n8% increased Attack and Cast Speed if you've summoned a TotemRecently",
+        desc: "30% increased Totem Placement speed\n8% increased Attack and Cast Speed if you've summoned a Totem Recently",
         emotions: ["Suffering", "Paranoia", "Guilt"]
     },
     {
         name: "Ancestral Conduits",
         href: "https://poe2db.tw/us/Ancestral_Conduits",
-        desc: "12% increased Attack and Cast Speed if you've summoned a TotemRecently",
+        desc: "12% increased Attack and Cast Speed if you've summoned a Totem Recently",
         emotions: ["Despair", "Suffering", "Suffering"]
     },
     {
@@ -1994,7 +1994,7 @@ export const PASSIVES_DATA = [
     {
         name: "Honourless",
         href: "https://poe2db.tw/us/Honourless",
-        desc: "25% increased Armour if you've Hit an Enemy with a Melee AttackRecently\n50% increased Melee Damage against Immobilised Enemies",
+        desc: "25% increased Armour if you've Hit an Enemy with a Melee Attack Recently\n50% increased Melee Damage against Immobilised Enemies",
         emotions: ["Ire", "Guilt", "Fear"]
     },
     {
@@ -2438,7 +2438,7 @@ export const PASSIVES_DATA = [
     {
         name: "Stormcharged",
         href: "https://poe2db.tw/us/Stormcharged",
-        desc: "40% increased Elemental Damage if you've dealt a Critical HitRecently\n20% increased Critical Hit Chance",
+        desc: "40% increased Elemental Damage if you've dealt a Critical Hit Recently\n20% increased Critical Hit Chance",
         emotions: ["Fear", "Fear", "Envy"]
     },
     {
@@ -3062,7 +3062,7 @@ export const PASSIVES_DATA = [
     {
         name: "Retaliation",
         href: "https://poe2db.tw/us/Retaliation",
-        desc: "75% increased Thorns damage if you've BlockedRecently",
+        desc: "75% increased Thorns damage if you've Blocked Recently",
         emotions: ["Ire", "Fear", "Suffering"]
     },
     {
@@ -3296,13 +3296,13 @@ export const PASSIVES_DATA = [
     {
         name: "Sudden Escalation",
         href: "https://poe2db.tw/us/Sudden_Escalation",
-        desc: "16% increased Critical Hit Chance for Spells\n8% increased Cast Speed if you've dealt a Critical HitRecently",
+        desc: "16% increased Critical Hit Chance for Spells\n8% increased Cast Speed if you've dealt a Critical Hit Recently",
         emotions: ["Disgust", "Paranoia", "Fear"]
     },
     {
         name: "Critical Overload",
         href: "https://poe2db.tw/us/Critical_Overload",
-        desc: "15% increased Critical Hit Chance for Spells\n15% increased Spell Damage if you've dealt a Critical HitRecently",
+        desc: "15% increased Critical Hit Chance for Spells\n15% increased Spell Damage if you've dealt a Critical Hit Recently",
         emotions: ["Guilt", "Envy", "Ire"]
     },
     {
@@ -3314,7 +3314,7 @@ export const PASSIVES_DATA = [
     {
         name: "Equilibrium",
         href: "https://poe2db.tw/us/Equilibrium",
-        desc: "30% increased Attack Damage if you've Cast a SpellRecently\n10% increased Cast Speed if you've Attacked Recently",
+        desc: "30% increased Attack Damage if you've Cast a Spell Recently\n10% increased Cast Speed if you've Attacked Recently",
         emotions: ["Fear", "Suffering", "Despair"]
     },
     {
