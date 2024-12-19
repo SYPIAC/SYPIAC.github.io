@@ -1376,7 +1376,7 @@ export const PASSIVES_DATA = [
     {
         name: "Shattering Blow",
         href: "https://poe2db.tw/us/Shattering_Blow",
-        desc: "Break50% of Armour on Heavy Stunning an Enemy",
+        desc: "Break 50% of Armour on Heavy Stunning an Enemy",
         emotions: ["Fear", "Guilt", "Guilt"]
     },
     {
@@ -1928,7 +1928,7 @@ export const PASSIVES_DATA = [
     {
         name: "Rapid Strike",
         href: "https://poe2db.tw/us/Rapid_Strike",
-        desc: "+30 to Accuracy Rating\n8% increased MeleeAttack Speed",
+        desc: "+30 to Accuracy Rating\n8% increased Melee Attack Speed",
         emotions: ["Ire", "Fear", "Fear"]
     },
     {
@@ -1976,7 +1976,7 @@ export const PASSIVES_DATA = [
     {
         name: "Deadly Flourish",
         href: "https://poe2db.tw/us/Deadly_Flourish",
-        desc: "20% increased MeleeCritical Hit Chance\nmelee critical strike chance +% when on full life [20]",
+        desc: "20% increased Melee Critical Hit Chance\nmelee critical strike chance +% when on full life [20]",
         emotions: ["Envy", "Ire", "Guilt"]
     },
     {
@@ -2354,7 +2354,7 @@ export const PASSIVES_DATA = [
     {
         name: "Stylebender",
         href: "https://poe2db.tw/us/Stylebender",
-        desc: "Break30% increased Armour on enemies affected by Ailments\n+10 to Strength\n25% increased Physical Damage",
+        desc: "Break 30% increased Armour on enemies affected by Ailments\n+10 to Strength\n25% increased Physical Damage",
         emotions: ["Greed", "Paranoia", "Suffering"]
     },
     {
@@ -2384,7 +2384,7 @@ export const PASSIVES_DATA = [
     {
         name: "Cut to the Bone",
         href: "https://poe2db.tw/us/Cut_to_the_Bone",
-        desc: "BreakArmour on Critical Hit with Spells equal to 10% of Physical Damage dealt\n10% chance to inflict Bleeding on Hit\n20% increased Physical Damage",
+        desc: "Break Armour on Critical Hit with Spells equal to 10% of Physical Damage dealt\n10% chance to inflict Bleeding on Hit\n20% increased Physical Damage",
         emotions: ["Despair", "Envy", "Isolation"]
     },
     {
@@ -2960,7 +2960,7 @@ export const PASSIVES_DATA = [
     {
         name: "Reverberating Impact",
         href: "https://poe2db.tw/us/Reverberating_Impact",
-        desc: "Break25% increased Armour\n16% increased Area of Effect for Attacks",
+        desc: "Break 25% increased Armour\n16% increased Area of Effect for Attacks",
         emotions: ["Envy", "Paranoia", "Despair"]
     },
     {
@@ -3470,7 +3470,7 @@ export const PASSIVES_DATA = [
     {
         name: "Breakage",
         href: "https://poe2db.tw/us/Breakage",
-        desc: "Break60% increased Armour\n10% chance to Defend with 200% of Armour",
+        desc: "Break 60% increased Armour\n10% chance to Defend with 200% of Armour",
         emotions: ["Fear", "Envy", "Greed"]
     },
     {
@@ -3488,7 +3488,7 @@ export const PASSIVES_DATA = [
     {
         name: "Cruel Methods",
         href: "https://poe2db.tw/us/Cruel_Methods",
-        desc: "Break40% increased Armour\n25% increased Physical Damage",
+        desc: "Break 40% increased Armour\n25% increased Physical Damage",
         emotions: ["Suffering", "Envy", "Paranoia"]
     },
     {
@@ -3530,7 +3530,7 @@ export const PASSIVES_DATA = [
     {
         name: "Exposed Wounds",
         href: "https://poe2db.tw/us/Exposed_Wounds",
-        desc: "15% increased chance to inflict Ailments\nBreak30% increased Armour on enemies affected by Ailments",
+        desc: "15% increased chance to inflict Ailments\nBreak 30% increased Armour on enemies affected by Ailments",
         emotions: ["Envy", "Paranoia", "Greed"]
     },
     {
